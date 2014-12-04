@@ -15,10 +15,13 @@ function readJSONFile(filename, callback) {
     }
   });
 }
+var path =__dirname+"";
+var path = path.replace("routes",'data/posts.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  readJSONFile("../data/posts.json", function(err, json){
+  //res.send(path);
+  readJSONFile(path, function(err, json){
     if(err){
       err.status = 500;
       next(err);

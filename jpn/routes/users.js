@@ -15,10 +15,12 @@ function readJSONFile(filename, callback) {
     }
   });
 }
+var path = String(__dirname);var path =__dirname+"";
+var path = path.replace("routes",'data/members.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  readJSONFile('../data/members.json', function(err, json){
+  readJSONFile(path, function(err, json){
     if(err){
       err.status = 500;
       next(err);
