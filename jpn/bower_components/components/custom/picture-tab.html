@@ -1,0 +1,26 @@
+<link rel="import" href="../paper-tabs/paper-tab.html">
+
+<polymer-element name="picture-tab" extends="paper-tab">
+  <template>
+    <style>
+      :host {
+        display:block;
+        height:100%;
+        min-height:100%;
+      }
+    </style>
+    <div class="tab-body" layout vertical center>
+      <content select="img"></content>
+      <content select="h2"></content>
+    </div>
+    <div class="overlay"></div>
+    <content></content>
+  </template>
+
+  <script>
+    Polymer({
+      // counter: 0,
+      // increment: function(e, detail, sender) { this.counter++ }
+    })
+  </script>
+</polymer-element>

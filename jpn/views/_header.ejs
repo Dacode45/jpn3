@@ -1,0 +1,65 @@
+
+<html ng-app="jpn">
+<head>
+  <base href="/">
+  <title>JPN</title>
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/angular/angular.min.js"></script>
+  <script src="/angular-route/angular-route.min.js"></script>
+  <script src="/javascripts/angularApp.js"></script>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link ng-href="/stylesheets/style.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <script
+  src="/components/webcomponentsjs/webcomponents.js">
+  </script>
+  <link rel="import"
+  href="../../components/core-toolbar/core-toolbar.html">
+  <link rel="import"
+  href="../../components/core-menu/core-menu.html">
+  <link rel="import"
+  href="../../components/core-item/core-item.html">
+  <link rel="import"
+  href="../../components/core-header-panel/core-header-panel.html">
+  <link rel="import"
+  href="../../components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import"
+  href="../../components/core-scaffold/core-scaffold.html">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+</head>
+
+
+<body unresolved>
+  <core-scaffold>
+    <core-header-panel navigation flex>
+    <core-toolbar id="navheader">
+      <span>Menu</span>
+    </core-toolbar>
+    <core-menu>
+      <a href="/#/landing">
+      <core-item label="Home" horizontal center layout></core-item>
+    </a>
+    <a ng-href="/#/contact">
+      <core-item label="Contact" horizontal center layout></core-item>
+    </a>
+    </core-menu>
+  </core-header-panel>
+
+  <span tool>JPN</span>

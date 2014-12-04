@@ -1,0 +1,30 @@
+[
+  {
+    "name":"Angela Wang",
+    "description":"Coolest president ever",
+    "position":"President",
+    "email":"angela.wang@wustl.edu",
+    "photo":"/img/angela_wang.jpg"
+  },
+  {
+    "name":"Jesse Wallace",
+    "description":"Coolest events manager ever",
+    "position":"Events Manager",
+    "email":"jesse.wallace@go.wustl.edu",
+    "photo":"/img/jesse_wallace.jpg"
+  },
+  {
+    "name":"David Ayeke",
+    "description":"Coolest Publicity Chair",
+    "position":"Publicity Chiar",
+    "email":"ayekedavidr@go.wustl.edu",
+    "photo":"/img/david_ayeke.jpg"
+  },
+  {
+    "name":"Moniqua Mengqi Guo",
+    "description":"Coolest Webmaster",
+    "position":"Webmaster",
+    "email":"mengqi.guo@go.wustl.edu",
+    "photo":"/img/moniqua_guo.jpg"
+  }
+]

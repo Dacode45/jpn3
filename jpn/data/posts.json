@@ -1,0 +1,20 @@
+[
+  {
+    "id":0,
+    "title":"Welcome to JPN",
+    "lead":"JPN Mission Statement",
+    "body":"The mission of the group is to raise awareness and display various aspects about Japan and its culture to the Washington University community. We also attempt to establish ethnic identity on campus. The club offers the Washington University community the opportunity for those interested in Japan and its culture to interact with each other through club events while pursuing their interest in Japan."
+  },
+  {
+    "id":1,
+    "title":"Sushi",
+    "lead":"JPN Annual Sushi Night",
+    "body":"Our Sushi Night was novermber 7, and it was popping!"
+  },
+  {
+    "id":2,
+    "title":"Omatsuri",
+    "lead":"JPN Annual Omatsuri",
+    "body":"Biggest Night of the year. Great to see all of you guys again."
+  }
+]

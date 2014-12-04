@@ -1,0 +1,36 @@
+<section id="contact" class="container">
+  <paper-tabs selected="1" role="tablist" horizontal center layout>
+    <paper-tab role="tab" ng-click="setIndex(index-1)" inline flex center-center horizontal layout class>
+      {{previous}}
+    </paper-tab>
+    <paper-tab role="tab" inline flex center-center horizontal layout class>
+      {{current}}
+    </paper-tab>
+    <paper-tab role="tab" ng-click="setIndex(index+1)"inline flex center-center horizontal layout class>
+      {{next}}
+    </paper-tab>
+  </paper-tabs>
+
+  <div class="row">
+    <div class="memberPic col-md-5 pull-left">
+      <h2>{{members[index].name}}</h2>
+      <img class="img-responsive img-rounded" ng-src="{{members[index].photo}}">
+    </div>
+    <div class="memberDescription col-md-5">
+      {{members[index].description}}
+    </div>
+    <div class="memberInfo col-md-5">
+      <div class="col-md-6">
+      <p class="lead">position</p>
+      <p>{{members[index].position}}
+      </div>
+
+      <div class="col-md-6">
+      <p class="lead">email</p>
+      <p>{{members[index].email}}
+      </div>
+
+    </div>
+  </div>
+
+</section>
