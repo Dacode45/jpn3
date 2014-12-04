@@ -18,7 +18,7 @@ function readJSONFile(filename, callback) {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  readJSONFile("./data/posts.json", function(err, json){
+  readJSONFile(__dirname+"/data/posts.json", function(err, json){
     if(err){
       err.status = 500;
       next(err);
