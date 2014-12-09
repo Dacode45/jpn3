@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jpn', ['ngRoute'])
+angular.module('jpn', ['ngRoute', 'ngAnimate'])
 .config(['$routeProvider', function AppConfig($routeProvider){
 
   $routeProvider
@@ -12,9 +12,17 @@ angular.module('jpn', ['ngRoute'])
       templateUrl:'/partials/contact.ejs',
       controller: 'ContactCtrl'
     })
+    .when('/calendar', {
+      templateUrl:'/partials/calendar.ejs',
+      controller: 'DefaultCtrl'
+    })
     .when('/post/:postId',{
       templateUrl:'/partials/post_view.ejs',
       controller:'PostCtrl'
+    })
+    .when('/paint', {
+      templateUrl:'/partials/paint.ejs',
+      controller:'PaintCtrl'
     })
     .otherwise({
       redirectTo:'/landing'
@@ -27,6 +35,25 @@ $http.get('/posts').success(function getPosts(data){
   $scope.mainPost = data.splice(0,1)[0];
   $scope.sidePost = data.splice(0,2);
   $scope.posts = data;
+  $scope.suggestEvent = {};
+  $scope.suggestEvent.name="";
+  $scope.suggestEvent.email="";
+  $scope.suggestEvent.description="";
+
+  $scope.suggest = function(event){
+    if(/^[a-zA-Z ]+$/.test(event.name)){
+      if(/^([a-z0-9A-Z_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/.test(event.email)){
+        if(event.description){
+          $scope.eventConfirmed = "Suggestion Sent";
+        }else
+          $scope.eventConfirmed = "No Description"
+
+      }
+      else
+        $scope.eventConfirmed = "Bad Email"
+    }else
+      $scope.eventConfirmed = "Bad Name"
+  }
 });
 }])
 .controller("ContactCtrl",
@@ -41,7 +68,7 @@ $http.get('/posts').success(function getPosts(data){
   });
   $scope.setIndex = function(i){
     $scope.index = i;
-    if($scope.index < 0){
+    if($scope.index <= 0){
       $scope.index = 0;
       $scope.previous = "";
       $scope.current = $scope.members[$scope.index].name;
@@ -57,5 +84,11 @@ $http.get('/posts').success(function getPosts(data){
   $http.get('/posts').success(function getOnePost(data){
     $scope.mainPost = data[$routeParams.postId];
   });
+}])
+.controller("PaintCtrl", ["$scope", function paint_ctrl($scope){
+  $scope.imgName = "";
+  $scope.changeImgName = function(name){
+    $scope.imgName = name;
+  }
 }])
 ;

@@ -1,0 +1,17 @@
+
+<script src="/javascripts/paint/paint.js"></script>
+<link rel="stylesheet" href="/javascripts/paint/paint.css">
+<script>createPaint(document.getElementById('paint'));</script>
+
+<div id="paint">
+
+</div>
+<div id="saveMessage">
+  Image Name:
+  <input class="form-control" id="imgName" ng-model="imgName" type="text">
+  </input>
+  <hr>
+  Link:
+  <a ng-href="/img/{{imgName}}.png">photo</a>
+
+</div>

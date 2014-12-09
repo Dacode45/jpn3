@@ -6,17 +6,23 @@
   <script src="/jquery/dist/jquery.min.js"></script>
   <script src="/angular/angular.min.js"></script>
   <script src="/angular-route/angular-route.min.js"></script>
+  <script src="/angular-animate/angular-animate.min.js"></script>
   <script src="/javascripts/angularApp.js"></script>
+
+  <!--Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
   <!-- Bootstrap Core CSS -->
   <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link ng-href="/stylesheets/style.css" rel="stylesheet">
+  <link ng-href="/stylesheets/animations.css" rel="stylesheet">
+
 
   <!-- Custom Fonts -->
   <link href="/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
   <script
   src="/components/webcomponentsjs/webcomponents.js">
@@ -33,6 +39,12 @@
   href="../../components/core-drawer-panel/core-drawer-panel.html">
   <link rel="import"
   href="../../components/core-scaffold/core-scaffold.html">
+  <link href="../../components/core-input/core-input.html" rel="import">
+  <link href="../../components/paper-input/paper-input-decorator.html" rel="import">
+  <link href="../../components/paper-input/paper-autogrow-textarea.html" rel="import">
+  <link href="../../components/paper-button/paper-button.html" rel="import">
+
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,10 +66,16 @@
     </core-toolbar>
     <core-menu>
       <a href="/#/landing">
-      <core-item label="Home" horizontal center layout></core-item>
+      <core-item icon="home" label="Home" horizontal center layout></core-item>
     </a>
     <a ng-href="/#/contact">
-      <core-item label="Contact" horizontal center layout></core-item>
+      <core-item icon="face-unlock" label="Contact" horizontal center layout></core-item>
+    </a>
+    <a ng-href="/#/calendar">
+      <core-item icon= "perm-contact-cal" label="Calendar" horizontal center layout></core-item>
+    </a>
+    <a ng-href="/#/paint">
+      <core-item icon= "gesture" label="Submit to Gallery" horizontal center layout></core-item>
     </a>
     </core-menu>
   </core-header-panel>

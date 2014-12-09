@@ -1,6 +1,26 @@
 <style>
+
+.bulletin{
+  margin-left:10px;
+  margin-top:5px;
+  border-radius:15px;
+  overflow:hidden;
+  background-color:yellow;
+  padding-left:0px;
+  padding-right:0px;
+  padding:0px;
+}
+
+.bulletin:hover{
+  transform:scale(1.1,1.1);
+  margin:30px;
+}
+
 .bulletinCaption{
+  text-align: center;
+  margin-bottom:0px;
   background-color:orange;
+  padding:5px;
 }
 h3{
   color:white;
@@ -23,73 +43,82 @@ h3{
   max-height:400px;
 }
 
+#suggestEventFormContainer{
+  padding-left:10px;
+  width:80%;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: white;
+  margin-bottom:50px;
+  text-align:center;
+}
 </style>
 
 <section id="landing" class = "container">
   <div class="row">
-    <div class="col-sm-7 jumbotron col-sm-offset-1 pull-left bulletin">
+    <div class="col-sm-6  pull-left bulletin">
       <a href="#/post/{{mainPost.id}}">
-        <img class="img-responsive" src="/img/logo.jpg">
+        <img class="img-responsive" ng-src="/img/logo.jpg"></img>
         <div class="bulletinCaption">
-          <h3 >{{mainPost.title}}</title>
-            <p class="lead">{{mainPost.lead}}</p>
-          </div>
-        </a>
+          <h3 >{{mainPost.title}}</h3>
+          <p class="lead">{{mainPost.lead}}</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-4 bulletin">
+      <a href="#/post/{{sidePost[0].id}}">
+        <img class="img-responsive" ng-src="{{sidePost[0].img}}"></img>
+        <div class="bulletinCaption">
+          <h3 >{{sidePost[0].title}}</h3>
+          <p class="lead">{{sidePost[0].lead}}</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-4 bulletin">
+      <a href="#/post/{{sidePost[1].id}}">
+        <img class="img-responsive" src="{{sidePost[1].img}}"></img>
+        <div class="bulletinCaption">
+          <h3 >{{sidePost[1].title}}</h3>
+          <p class="lead">{{sidePost[1].lead}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <hr></hr>
+  <div class="row">
+  <div class="col-sm-4 bulletin" ng-repeat='post in posts'>
+    <a href="#/post/{{post.id}}">
+      <img class="img-responsive" ng-src="{{post.img}}"></img>
+      <div class="bulletinCaption">
+        <h3 >{{post.title}}</h3>
+        <p class="lead">{{post.lead}}</p>
       </div>
-      <div class="col-sm-4 item">
-        <a href="#/post/{{sidePost[0]}}">
-          <img class="img-responsive" src="/img/logo.jpg">
-          <div class="bulletinCaption">
-            <h3 >{{sidePost[0].title}}</title>
-              <p class="lead">{{sidePost[0].lead}}</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-4 item">
-          <a href="#/post/{{sidePost[1]}}">
-            <img class="img-responsive" src="/img/logo.jpg">
-            <div class="bulletinCaption">
-              <h3 >{{sidePost[1].title}}</title>
-                <p class="lead">{{sidePost[1].lead}}</p>
-              </div>
-            </a>
-          </div>
-        </div>
+    </a>
+  </div>
+</div>
 
-        <div id="carouselHighlights" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carouselHighlights" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselHighlights" data-slide-to="1"></li>
-          </ol>
+<div class="row" id="suggestEventFormContainer">
+  <form>
+    <h1>Suggest an Event!</h1>
+    <paper-input-decorator   label="Name" floatinglabel error="Name Required" layout vertical>
+      <input  ng-model="suggestEvent.name" id="input1" is="core-input">
+    </paper-input-decorator>
+    <paper-input-decorator   label="Email" floatinglabel error="Name Required" layout vertical>
+      <input ng-model="suggestEvent.email" id="input1" is="core-input">
+    </paper-input-decorator>
+    <paper-input-decorator label="Description" floatinglabel error="Name Required" layout vertical>
+      <textarea  ng-model="suggestEvent.description"></textarea>
+    </paper-input-decorator>
+    <paper-button raised role="button" id="submitSuggestion" class="btn btn-success btn-lg" ng-click='suggest(suggestEvent)'>
+      Submit
+    </paper-button>
+    <span ng-show="eventConfirmed">
+      {{eventConfirmed}}
+    </span>
 
-          <!-- Wrapper for slides -->
+  </form>
+</div>
 
-          <div class="carousel-inner">
-            <div class="img-responsive" class="item active">
-              <img src="/img/banner.jpg" alt="...">
-              <div class="carousel-caption">
-                <h3>JPN</h3>
-              </div>
-            </div>
-            <div class="item">
-              <img class="img-responsive" src="/img/sushi.jpg" alt="...">
-              <div class="carousel-caption">
-                <h3>Sushi</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <a class="left carousel-control" href="#carouselHighlights" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a class="right carousel-control" href="#carouselHighlights" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-        </div> <!-- Carousel -->
-        <hr></hr>
-        <iframe align="middle" src="https://www.google.com/calendar/embed?src=g6celks31795r76pvlo3gmojog%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
-      </section>
-      <script src="bootstrap/js/carousel.js"/>
+</section>
+<script src="bootstrap/js/carousel.js"/>
