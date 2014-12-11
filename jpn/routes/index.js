@@ -45,10 +45,18 @@ router.post('/image', function(req, res){
   }catch(e){
     res.send(500, "Cant interpret image");
   }
-})
+});
+
+router.get('/gallery', function(req, res){
+  var images = fs.readdirSync("public/img/gallery");
+  res.send(images);
+});
+
 router.get('/', function(req, res) {
   res.render('layout', { title: 'Express' });
 });
+
+
 
 
 

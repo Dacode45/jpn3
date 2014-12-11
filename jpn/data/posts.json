@@ -11,13 +11,34 @@
     "img":"img/sushi.jpg",
     "title":"Sushi",
     "lead":"JPN Annual Sushi Night",
-    "body":"Our Sushi Night was novermber 7, and it was popping!"
+    "body":"Our Sushi Night was novermber 7, and it was popping!. Thanks to everyone who came."
   },
   {
     "id":2,
     "title":"Omatsuri",
     "img":"img/omatsuri.jpg",
     "lead":"JPN Annual Omatsuri",
-    "body":"<h1>Biggest Night of the year.</h1> Great to see all of you guys again."
+    "body":"<h1>Biggest Night of the year.</h1> Great to see all of you guys again. Can wait for anothe great one next year."
+  },
+  {
+    "id":3,
+    "img":"img/1669802_901313959898777_9007201290614805905_o.jpg",
+    "title":"Snack Sale",
+    "lead":"Our most successful fundraiser",
+    "body":"Thanks to all our loyal members we were able to raise over $500 for this semester. We can't wait to apply this money to Omatsuri."
+  },
+  {
+    "id":4,
+    "img":"img/10575117_880699051960268_7786755259204519620_o.jpg",
+    "title":"GBM",
+    "lead":"First Meeting of the Year!",
+    "body":"JPN is back!!! Head over to our first GBM to see all the great stuff we'll be doing this semester."
+  },
+  {
+    "id":5,
+    "title":"Green Tea Icecream Social",
+    "img":"img/moniqua_guo.jpg",
+    "lead":"Great to Meet you all",
+    "body":"It was awesome to meet all the new members. Can't wait to see you again at sushi night"
   }
 ]

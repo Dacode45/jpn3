@@ -55,6 +55,10 @@ $http.get('/posts').success(function getPosts(data){
       $scope.eventConfirmed = "Bad Name"
   }
 });
+
+$http.get('/gallery').success(function getGalleryImages(data){
+  $scope.galleryImages = data;
+})
 }])
 .controller("ContactCtrl",
 ['$scope', '$http', function contact_ctrl($scope, $http){
@@ -73,7 +77,13 @@ $http.get('/posts').success(function getPosts(data){
       $scope.previous = "";
       $scope.current = $scope.members[$scope.index].name;
       $scope.next = ($scope.members[$scope.index+1])? $scope.members[$scope.index+1].name: "";
-    }else{
+    }else if($scope.index >= $scope.members.length){
+      $scope.index = $scope.members.length-1;
+      $scope.previous = $scope.members[$scope.index-1].name;
+      $scope.current = $scope.members[$scope.index].name;
+      $scope.next = "";
+    }
+    else{
       $scope.previous = $scope.members[$scope.index-1].name;
       $scope.current = $scope.members[$scope.index].name;
       $scope.next = ($scope.members[$scope.index+1])? $scope.members[$scope.index+1].name: "";
