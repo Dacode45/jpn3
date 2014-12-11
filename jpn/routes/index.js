@@ -39,7 +39,9 @@ router.post('/image', function(req, res){
       name = req.body.name;
     }else
       name = makeImgName();
-    var name = "public/img/"+name+'.' + type;
+    var path =__dirname+"";
+    var path = path.replace("routes",'');
+    var name = path+"public/img/"+name+'.' + type;
     fs.writeFile(name, img.data);
     res.send({link:name.replace('public/', '')});
   }catch(e){
@@ -48,7 +50,10 @@ router.post('/image', function(req, res){
 });
 
 router.get('/gallery', function(req, res){
-  var images = fs.readdirSync("public/img/gallery");
+  var path =__dirname+"";
+  var path = path.replace("routes",'');
+
+  var images = fs.readdirSync(path+"public/img/gallery");
   res.send(images);
 });
 
